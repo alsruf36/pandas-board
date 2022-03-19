@@ -13,8 +13,8 @@
 export default {
   name: 'IndexPage',
 
-  async asyncData ({ $axios }) {
-    const { data } = await $axios.get('http://localhost:8000/api/board/3/')
+  async asyncData ({ params, $axios }) {
+    const { data } = await $axios.get(`http://localhost:8000/api/board/${params.id}/`)
     return { article: data }
   },
 
